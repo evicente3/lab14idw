@@ -50,6 +50,43 @@ function distanciaPuntos(x1,y1,x2,y2){
 //10
 function normalizarNotas(...notas){
     let maxNota=Math.max(...notas);
-    let notasNormalizadas=notas.map(nota =>((nota/maxNota)));
+    let notasNormalizadas=notas.map(nota =>{
+        const valorNormalizado = nota / maxNota;
+        return valorNormalizado.toFixed(2);
+});
     return notasNormalizadas;
+}
+//11
+class Producto {
+    #nombre;
+    #precio;
+    #stock;
+    constructor(nombre,precio,stock){
+        this.nombre=nombre;
+        this.precio=precio;
+        this.stock=stock;
+    }
+    getPrecio(){
+        return this.precio;
+    }
+    getStock(){
+        return this.stock;
+    }
+    setStock(cantidad){
+        if (cantidad>0){
+        this.stock=cantidad;
+    }
+    setPrecio(nuevoPrecio){
+        if (nuevoPrecio>0){
+        this.precio=nuevoPrecio;
+    }
+    }
+    vender(cantidad){
+        if(cantidad>0 && cantidad<=this.stock){
+            this.stock-=cantidad;   
+             return stock;     
+        }
+       
+    }
+}
 }
